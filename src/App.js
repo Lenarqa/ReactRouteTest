@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Products from "./pages/Products";
 import Welcom from "./pages/Welcom";
 import MainHeader from "./components/MainHeader";
@@ -11,6 +11,9 @@ function App() {
       <MainHeader />
       <main>
         <Switch>
+          <Route path="/" exact>
+            <Redirect to="/welcom"/>
+          </Route>
           <Route path="/welcom">
             <Welcom />
           </Route>
